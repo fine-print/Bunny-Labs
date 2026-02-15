@@ -1,11 +1,11 @@
 {
   "landing": {
-    "background": "/img/landing-bg.png",
+    "background": "img/landing-bg.png",
     "hotspots": [
   {
     "id": "login",
     "label": "Log In",
-    "img": "/img/loginUIbutton.png",
+    "img": "img/loginUIbutton.png",
     "to": "/marketplace",
     "x": 0.3036263736263736,
     "y": 0.3334065934065934,
@@ -15,7 +15,7 @@
   {
     "id": "register",
     "label": "Register",
-    "img": "/img/registerUIbutton.png",
+    "img": "img/registerUIbutton.png",
     "to": "/marketplace",
     "x": 0.541978021978022,
     "y": 0.33999999999999997,
@@ -26,12 +26,12 @@
   },
 
   "marketplace": {
-    "background": "/img/marketplace-bg.png",
+    "background": "img/marketplace-bg.png",
     "hotspots": [
   {
     "id": "toReferrals",
     "label": "Referrals",
-    "img": "/img/referralsUIbutton.png",
+    "img": "img/referralsUIbutton.png",
     "to": "/referrals",
     "x": 0.0398901098901099,
     "y": 0.43,
@@ -41,7 +41,7 @@
   {
     "id": "toProfile",
     "label": "Profile/Leaderboards",
-    "img": "/img/profileleaderboardUIbutton.png",
+    "img": "img/profileleaderboardUIbutton.png",
     "to": "/profile",
     "x": 0.039780219780219776,
     "y": 0.5257142857142858,
@@ -51,7 +51,7 @@
   {
     "id": "toBreeding",
     "label": "Breeding Caves",
-    "img": "/img/breedingcavesUIbutton.png",
+    "img": "img/breedingcavesUIbutton.png",
     "to": "/breeding",
     "x": 0.5393406593406593,
     "y": 0.42637362637362636,
@@ -61,7 +61,7 @@
   {
     "id": "toBPacks",
     "label": "bPACKS",
-    "img": "/img/bPACKSUIbutton.png",
+    "img": "img/bPACKSUIbutton.png",
     "to": "/bpacks",
     "x": 0.34307692307692306,
     "y": 0.6190109890109889,
@@ -72,22 +72,23 @@
   },
 
   "referrals": {
-    "background": "/img/referralsbg.png",
+    "background": "img/referralsbg.png",
     "hotspots": []
   },
 
   "breeding": {
-    "background": "/img/breedingcavesss.png",
+    "background": "img/breedingcavesss.png",
     "hotspots": []
   },
 
   "bpacks": {
-    "background": "/img/bpacksbg.png",
+    "background": "img/bpacksbg.png",
     "hotspots": []
   },
 
   "profile": {
-    "background": "/img/profileleaderboardbg.png",
+    "background": "img/profileleaderboardbg.png",
     "hotspots": []
   }
 }
+
