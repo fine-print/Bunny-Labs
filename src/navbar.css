@@ -1,0 +1,69 @@
+/* ===== NAV ROOT ===== */
+.nav-root {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+
+  padding: 10px 24px;
+}
+
+/* ===== INNER FLEX ===== */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ===== LOGO ===== */
+.nav-logo {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+/* ===== LINKS ===== */
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  color: #ffffffcc;
+  padding: 6px 12px;
+  border-radius: 12px;
+
+  transition: all 0.25s ease;
+}
+
+/* Hover glow */
+.nav-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+}
+
+/* Active page */
+.nav-links a.active {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 200, 0.35),
+    rgba(255, 120, 200, 0.35)
+  );
+  box-shadow: 0 0 14px rgba(0, 255, 200, 0.5);
+}

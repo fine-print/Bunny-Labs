@@ -1,0 +1,144 @@
+/* ===== Base page reset ===== */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #21272b;
+}
+
+/* ===== Stage (full-screen) =====
+   This is the outer wrapper for each scene page.
+   It draws the blurred side panels behind your square background image.
+*/
+.stage {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #21272b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LEFT blurred panel (shows LEFT edge of header image) */
+.stage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("/img/header-blur.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0% 50%;
+  filter: blur(22px) saturate(1.1);
+  transform: scale(1.3);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+/* RIGHT blurred panel (shows RIGHT edge of header image) */
+.stage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url("/img/header-blur.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  filter: blur(22px) saturate(1.1);
+  transform: scale(1.3);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+/* Optional dark tint overlay so the foreground pops */
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
+}
+
+/* Foreground frame that holds the real square background + hotspots */
+.stage-frame {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  box-shadow: 0 0 80px rgba(0,0,0,0.6);
+border-radius: 20px;
+overflow: hidden;
+}
+
+/* Foreground square scene image (keeps entire image visible) */
+.stage-bg {
+  display: block;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* ===== Hotspots ===== */
+.hotspot-btn {
+  position: absolute;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  transition: outline 0.2s;
+  padding: 0;
+  margin: 0;
+}
+
+.hotspot-btn.selected,
+.hotspot-btn:focus-visible {
+  outline: 2px solid #f9c94b;
+  z-index: 3;
+}
+
+.hotspot-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.5em;
+  width: 100%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1em;
+}
+
+/* ===== Edit UI ===== */
+.live-coords {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: rgba(34, 34, 34, 0.85);
+  color: #eaeaea;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  padding: 0.25em 1em;
+  font-size: 1.05em;
+  z-index: 100;
+}
+
+.copy-btn {
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  padding: 8px 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  background: #ed8e53;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
