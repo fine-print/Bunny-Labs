@@ -1,6 +1,6 @@
 {
   "landing": {
-    "background": "/img/login-bg.png",
+    "background": "img/login-bg.png",
     "hotspots": [
       {
         "id": "login",
@@ -26,27 +26,28 @@
   },
 
   "lab": {
-    "background": "/img/carrot-bg.png",
+    "background": "img/carrot-bg.png",
     "hotspots": []
   },
 
   "supply": {
-    "background": "/img/marketplace-bg.png",
+    "background": "img/marketplace-bg.png",
     "hotspots": []
   },
 
   "storage": {
-    "background": "/img/storage-bg.png",
+    "background": "img/storage-bg.png",
     "hotspots": []
   },
 
   "invite": {
-    "background": "/img/referral-bg.png",
+    "background": "img/referral-bg.png",
     "hotspots": []
   },
 
   "profile": {
-    "background": "/img/profile-bg.png",
+    "background": "img/profile-bg.png",
     "hotspots": []
   }
 }
+
