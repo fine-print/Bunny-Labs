@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ScenePage from './ScenePage.jsx';
 import NavBar from './NavBar.jsx';
-import { GameProvider } from './game/GameProvider.jsx';
+import { GameProvider } from "./game/GameProvider";
 
 export default function App() {
   return (
@@ -21,3 +21,4 @@ export default function App() {
     </GameProvider>
   );
 }
+
