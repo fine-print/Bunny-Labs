@@ -69,7 +69,7 @@ export function GameProvider({ children }) {
     lastT.current = nowMs();
     const id = window.setInterval(() => {
       const t = nowMs();
-      const dt = Math.min(2, (t - lastT.current) / 1000); // cap to avoid huge jumps
+      const dt = Math.min(2, (t - lastT.current) / 100000); // cap to avoid huge jumps
       lastT.current = t;
 
       setCarrots((c) => c + cps * dt);
