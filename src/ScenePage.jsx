@@ -94,19 +94,28 @@ function LabUI({ stageSize }) {
 function SupplyUI({ stageSize }) {
   const { carrots, unlockBunny } = useGame();
 
-  return (
-    <OverlayCard stageSize={stageSize} rect={{ x: 0.08, y: 0.18, w: 0.84, h: 0.66 }} title="SUPPLY BAY">
-      <div className="muted">
-        V1: lightweight store. Unlock a bunny in Storage Vault, then come back here for upgrades later.
-      </div>
+  const leftRect = pctRectToPx({ x: 0.055, y: 0.18, w: 0.41, h: 0.68 }, stageSize);
+  const rightRect = pctRectToPx({ x: 0.535, y: 0.18, w: 0.41, h: 0.68 }, stageSize);
 
-      <div className="two-col">
-        <div className="panel">
-          <div className="panel-title">Quick Actions</div>
+  return (
+    <>
+      <div
+        className="supply-pane-floating supply-pane-left"
+        style={{
+          left: `${leftRect.left}px`,
+          top: `${leftRect.top}px`,
+          width: `${leftRect.width}px`,
+          height: `${leftRect.height}px`,
+        }}
+      >
+        <div className="supply-pane-title">Bunny Upgrade Tracks</div>
+        <div className="muted supply-muted">Buy upgrades for each bunny type. Full upgrade trees will be wired in next.</div>
+
+        <div className="panel supply-panel">
+          <div className="panel-title supply-panel-title">Quick Actions</div>
           <button
-            className="btn"
+            className="btn supply-btn"
             onClick={() => {
-              // small debug-ish helper for you while building, not player-facing forever
               if (carrots < 10) {
                 alert('Not enough carrots yet. Let the lab run for a bit.');
               } else {
@@ -117,7 +126,7 @@ function SupplyUI({ stageSize }) {
             Check Inventory
           </button>
           <button
-            className="btn btn-ghost"
+            className="btn btn-ghost supply-btn"
             onClick={() => {
               const res = unlockBunny('tech');
               if (!res.ok) alert(res.reason);
@@ -125,22 +134,35 @@ function SupplyUI({ stageSize }) {
           >
             Buy Lab Tech (shortcut)
           </button>
-          <div className="muted" style={{ marginTop: 10 }}>
-            (That shortcut button is just for development speed. Remove anytime.)
+          <div className="muted supply-muted" style={{ marginTop: 8 }}>
+            (Temporary dev shortcut. Can be removed when real bunny trees are ready.)
           </div>
         </div>
+      </div>
 
-        <div className="panel">
-          <div className="panel-title">Planned Shelves</div>
-          <ul className="list">
-            <li>Yield modules (cps multipliers)</li>
-            <li>Automation chips (offline earnings later)</li>
-            <li>Cosmetics (badges, lab coats, UI skins)</li>
-            <li>Offerwall/ad boosts (far later, optional)</li>
+      <div
+        className="supply-pane-floating supply-pane-right"
+        style={{
+          left: `${rightRect.left}px`,
+          top: `${rightRect.top}px`,
+          width: `${rightRect.width}px`,
+          height: `${rightRect.height}px`,
+        }}
+      >
+        <div className="supply-pane-title">Genetics & Mutation Upgrades</div>
+        <div className="muted supply-muted">Global growth upgrades for the carrot system will live in this window.</div>
+
+        <div className="panel supply-panel">
+          <div className="panel-title supply-panel-title">Planned Modules</div>
+          <ul className="list supply-list">
+            <li>Carrot strain boosts (global cps multipliers)</li>
+            <li>Mutation efficiency (upgrade cost reduction)</li>
+            <li>Batch synthesis upgrades (larger production ticks)</li>
+            <li>Lab stability controls (future offline gain support)</li>
           </ul>
         </div>
       </div>
-    </OverlayCard>
+    </>
   );
 }
 

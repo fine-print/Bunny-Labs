@@ -389,3 +389,66 @@ html, body, #root {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   color: rgba(255,255,255,0.82);
 }
+
+
+.supply-pane-floating {
+  position: absolute;
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(3, 10, 12, 0.36);
+  backdrop-filter: blur(6px);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+
+.supply-pane-left {
+  box-shadow: inset 0 0 0 1px rgba(99, 255, 187, 0.24);
+}
+
+.supply-pane-right {
+  box-shadow: inset 0 0 0 1px rgba(255, 168, 92, 0.24);
+}
+
+.supply-pane-title {
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: 0.4px;
+  margin-bottom: 6px;
+}
+
+.supply-muted {
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+
+.supply-panel {
+  padding: 10px;
+}
+
+.supply-panel-title {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.supply-btn {
+  font-size: 12px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.supply-list {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+@media (max-width: 920px) {
+  .supply-pane-floating {
+    position: static;
+    width: auto !important;
+    height: auto !important;
+    margin: 10px;
+  }
+}
