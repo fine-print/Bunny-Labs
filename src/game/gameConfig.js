@@ -11,28 +11,28 @@ export const STARTER_BUNNIES = [
     name: 'Lab Tech Bunny',
     description: 'Runs the carrot vats on schedule. Surprisingly competent.',
     baseCps: 0.6,
-    unlockCost: 25,
+    unlockCost: 500,
   },
   {
     id: 'chemist',
     name: 'Carrot Chemist',
     description: 'Optimizes flavor compounds. Output rises. Ethics remain… mostly intact.',
     baseCps: 1.5,
-    unlockCost: 120,
+    unlockCost: 5000,
   },
   {
     id: 'engineer',
     name: 'Yield Engineer',
     description: 'Tweaks the pipes, reorders the conveyors, and calls it science.',
     baseCps: 3.5,
-    unlockCost: 450,
+    unlockCost: 50000,
   },
   {
     id: 'director',
     name: 'Research Director',
     description: 'Signs off on experiments and adds three more dashboards.',
     baseCps: 8.0,
-    unlockCost: 1500,
+    unlockCost: 500000,
   },
 ];
 
