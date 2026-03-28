@@ -460,6 +460,15 @@ export default function ScenePage({ pageKey }) {
           }}
         />
 
+        {pageKey === 'landing' && (
+          <img
+            className="landing-logo"
+            src="img/bunny-lab-logo.svg"
+            alt="Bunny Lab"
+            draggable={false}
+          />
+        )}
+
         {/* Hotspots (used mainly for landing buttons, plus edit mode) */}
         {positionedHotspots.map((h, idx) => (
           <button

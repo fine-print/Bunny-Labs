@@ -1,0 +1,24 @@
+<svg width="1304" height="768" viewBox="0 0 1304 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="neonFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5bd7"/>
+      <stop offset="50%" stop-color="#74a8ff"/>
+      <stop offset="100%" stop-color="#6bffd8"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1304" height="768" fill="transparent"/>
+
+  <text x="652" y="315" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-size="220" fill="url(#neonFill)" stroke="#f6f3ff" stroke-width="10" filter="url(#glow)">BUNNY</text>
+  <text x="770" y="560" text-anchor="middle" font-family="Arial Black, Impact, sans-serif" font-size="200" fill="url(#neonFill)" stroke="#f6f3ff" stroke-width="10" filter="url(#glow)">LAB</text>
+
+  <text x="140" y="410" font-size="170">🧪</text>
+  <text x="1130" y="395" font-size="190">🥕</text>
+</svg>
