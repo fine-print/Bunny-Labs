@@ -68,7 +68,7 @@ function LabUI({ stageSize }) {
 
       <div className="section">
         <div className="section-title">Carrot Synth Upgrade</div>
-        <div className="muted">Increases all production by +15% per level. Slow growth on purpose.</div>
+        <div className="muted">Increases all production by +15% per level (compounding). Slow growth on purpose.</div>
         <button
           className="btn"
           onClick={() => buyCarrotSynthUpgrade()}
@@ -459,6 +459,15 @@ export default function ScenePage({ pageKey }) {
             if (rect) setStageSize({ w: rect.width, h: rect.height });
           }}
         />
+
+        {pageKey === 'landing' && (
+          <img
+            className="landing-logo"
+            src="img/bunny-lab-logo.svg"
+            alt="Bunny Lab"
+            draggable={false}
+          />
+        )}
 
         {/* Hotspots (used mainly for landing buttons, plus edit mode) */}
         {positionedHotspots.map((h, idx) => (
