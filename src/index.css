@@ -139,6 +139,18 @@ html, body, #root {
   -webkit-user-drag: none;
 }
 
+.landing-logo {
+  position: absolute;
+  top: 13%;
+  left: 57%;
+  transform: translateX(-50%);
+  width: min(56%, 900px);
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.55));
+}
+
 /* ===== Hotspots ===== */
 .hotspot-btn {
   position: absolute;
@@ -375,6 +387,20 @@ html, body, #root {
   color: rgba(255,255,255,0.92);
   font-weight: 900;
   font-size: 12px;
+}
+
+.storage-vat-btn {
+  position: absolute;
+  z-index: 4;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  background: rgba(12, 26, 22, 0.84);
+  border: 1px solid rgba(126, 255, 189, 0.42);
 }
 
 .mono-box {
