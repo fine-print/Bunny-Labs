@@ -389,6 +389,20 @@ html, body, #root {
   font-size: 12px;
 }
 
+.storage-vat-btn {
+  position: absolute;
+  z-index: 4;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 8px 10px;
+  text-align: center;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
+  background: rgba(12, 26, 22, 0.84);
+  border: 1px solid rgba(126, 255, 189, 0.42);
+}
+
 .mono-box {
   padding: 12px;
   border-radius: 16px;

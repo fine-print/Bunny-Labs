@@ -168,42 +168,46 @@ function SupplyUI({ stageSize }) {
 
 function StorageUI({ stageSize }) {
   const { carrots, unlocked, unlockBunny } = useGame();
+  const vatSlots = {
+    intern: { x: 0.08, y: 0.21, w: 0.17, h: 0.085 },
+    tech: { x: 0.275, y: 0.21, w: 0.17, h: 0.085 },
+    chemist: { x: 0.47, y: 0.21, w: 0.17, h: 0.085 },
+    engineer: { x: 0.23, y: 0.54, w: 0.19, h: 0.09 },
+    director: { x: 0.56, y: 0.54, w: 0.19, h: 0.09 },
+  };
 
   return (
-    <OverlayCard stageSize={stageSize} rect={{ x: 0.06, y: 0.14, w: 0.88, h: 0.72 }} title="STORAGE VAULT">
-      <div className="muted">Unlock new bunny types. Each adds a base carrots/sec contribution.</div>
+    <>
+      {STARTER_BUNNIES.map((b) => {
+        const slot = vatSlots[b.id];
+        if (!slot) return null;
 
-      <div className="bunny-grid">
-        {STARTER_BUNNIES.map((b) => {
-          const isUnlocked = !!unlocked[b.id];
-          const canBuy = !isUnlocked && carrots >= b.unlockCost;
+        const isUnlocked = !!unlocked[b.id];
+        const canBuy = !isUnlocked && carrots >= b.unlockCost;
+        const px = pctRectToPx(slot, stageSize);
 
-          return (
-            <div key={b.id} className={`bunny-card${isUnlocked ? ' unlocked' : ''}`}>
-              <div className="bunny-card-top">
-                <div className="bunny-name">{b.name}</div>
-                <div className="bunny-cps">+{b.baseCps} cps</div>
-              </div>
-              <div className="bunny-desc">{b.description}</div>
-
-              {isUnlocked ? (
-                <div className="tag">Unlocked</div>
-              ) : (
-                <button
-                  className={`btn ${canBuy ? '' : 'btn-ghost'}`}
-                  onClick={() => {
-                    const res = unlockBunny(b.id);
-                    if (!res.ok) alert(res.reason);
-                  }}
-                >
-                  Unlock — Cost {b.unlockCost}
-                </button>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </OverlayCard>
+        return (
+          <button
+            key={b.id}
+            className={`btn storage-vat-btn ${canBuy || isUnlocked ? '' : 'btn-ghost'}`}
+            style={{
+              left: `${px.left}px`,
+              top: `${px.top}px`,
+              width: `${px.width}px`,
+              height: `${px.height}px`,
+            }}
+            onClick={() => {
+              if (isUnlocked) return;
+              const res = unlockBunny(b.id);
+              if (!res.ok) alert(res.reason);
+            }}
+            title={`${b.name} (+${b.baseCps} cps)`}
+          >
+            {isUnlocked ? `${b.name}: Unlocked` : `${b.name} — Unlock ${formatCarrots(b.unlockCost)}`}
+          </button>
+        );
+      })}
+    </>
   );
 }
 
