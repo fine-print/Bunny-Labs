@@ -68,7 +68,7 @@ function LabUI({ stageSize }) {
 
       <div className="section">
         <div className="section-title">Carrot Synth Upgrade</div>
-        <div className="muted">Increases all production by +15% per level. Slow growth on purpose.</div>
+        <div className="muted">Increases all production by +15% per level (compounding). Slow growth on purpose.</div>
         <button
           className="btn"
           onClick={() => buyCarrotSynthUpgrade()}
